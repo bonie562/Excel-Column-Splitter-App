@@ -938,3 +938,192 @@ to
 [2025-11-18 16:56:27] [INFO] SPLIT OPERATION COMPLETED SUCCESSFULLY!
 [2025-11-18 16:56:27] [INFO] ================================================================================
 [2025-11-18 17:11:54] [INFO] Application started successfully.
+[2025-11-18 17:15:34] [INFO] Application started successfully.
+[2025-11-18 17:16:39] [INFO] Application started successfully.
+[2025-11-18 17:19:05] [INFO] Application started successfully.
+[2025-11-18 17:19:16] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 17:19:19] [INFO] File loaded as Excel format
+[2025-11-18 17:19:19] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 17:19:19] [INFO] Total rows: 200
+[2025-11-18 17:19:19] [INFO] Column listbox populated with 16 columns
+[2025-11-18 17:19:25] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 17:19:31] [INFO] Split operation starting...
+[2025-11-18 17:19:31] [INFO] Selected columns: Normal Volume (7 Days)
+[2025-11-18 17:19:31] [INFO] Output format: csv
+[2025-11-18 17:19:31] [INFO] Starting split with columns: Normal Volume (7 Days)
+[2025-11-18 17:19:31] [INFO] Single column split: 150 unique values found
+[2025-11-18 17:19:32] [INFO] Created output directory: C:/Users/Abdussamad Ahmad/Desktop/Wasper app\Normal_Volume_(7_Days)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 1.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 2.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 2.csv (2 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 2.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 2.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (3 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (4 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (4 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:32] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (3 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (3 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 4.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (3 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (2 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:33] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (2 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (2 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (2 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (3 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (2 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (2 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 5.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (2 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (2 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (2 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 6.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (2 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (3 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:34] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 7.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 8.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 8.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 8.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 8.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 8.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 9.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 9.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 9.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 9.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 9.csv (1 rows)
+[2025-11-18 17:19:35] [INFO] \u2713 Exported: 9.csv (1 rows)
+[2025-11-18 17:19:37] [INFO] \u2713 ZIP archive created: Normal_Volume_(7_Days).zip (0.06 MB)
+[2025-11-18 17:19:37] [INFO] \u2713 Total files exported: 150
+[2025-11-18 17:19:37] [INFO] ================================================================================
+[2025-11-18 17:19:37] [INFO] SPLIT OPERATION COMPLETED SUCCESSFULLY!
+[2025-11-18 17:19:37] [INFO] ================================================================================

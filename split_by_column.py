@@ -95,14 +95,6 @@ class DataSplitterApp:
 
         # Setup UI
         self._setup_ui()
-        # Try to apply rounded corners to the window perimeter where supported
-        try:
-            # Delay first application until window has mapped and sized
-            self.root.after(200, lambda: self._apply_rounded_corners(16))
-            # Re-apply on resize/configure so the region matches the new size
-            self.root.bind("<Configure>", lambda e: self._apply_rounded_corners(16))
-        except Exception:
-            pass
 
         self.log("Application started successfully.")
 
@@ -499,53 +491,6 @@ class DataSplitterApp:
             except Exception:
                 pass
             return "Segoe UI"
-
-        def _apply_rounded_corners(self, radius: int = 16) -> None:
-            """
-            Apply rounded corners to the main window perimeter where supported.
-
-            Currently implemented as a best-effort for Windows using the
-            Win32 GDI CreateRoundRectRgn + SetWindowRgn APIs. For other
-            platforms this is a no-op.
-
-            Notes:
-            - We schedule an initial call after the window maps and also
-              re-apply on '<Configure>' so the region tracks size changes.
-            - If the platform or APIs are unavailable the function silently
-              returns without affecting the window.
-
-            Args:
-                radius: corner radius in pixels
-            """
-            try:
-                import sys
-                if not sys.platform.startswith("win"):
-                    return
-
-                # Acquire required Win32 functions
-                from ctypes import windll, byref, wintypes
-
-                hwnd = self.root.winfo_id()
-                # Ensure the window has a valid size before creating region
-                w = self.root.winfo_width()
-                h = self.root.winfo_height()
-                if w <= 1 or h <= 1:
-                    return
-
-                # CreateRoundRectRgn parameters: left, top, right, bottom, widthEllipse, heightEllipse
-                gdi32 = windll.gdi32
-                user32 = windll.user32
-                CreateRoundRectRgn = gdi32.CreateRoundRectRgn
-                SetWindowRgn = user32.SetWindowRgn
-
-                # right and bottom in CreateRoundRectRgn are exclusive coordinates
-                hrgn = CreateRoundRectRgn(0, 0, int(w) + 1, int(h) + 1, radius, radius)
-                # Apply region to window (True = redraw)
-                SetWindowRgn(wintypes.HWND(hwnd), hrgn, True)
-
-            except Exception:
-                # Best-effort: silently ignore failures so app remains usable
-                return
 
     def log(self, message: str, level: str = "INFO") -> None:
         """
