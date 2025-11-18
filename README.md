@@ -31,7 +31,7 @@ A **Tkinter-based desktop application** for splitting Excel or CSV datasets by c
 ## **Installation**
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/split-by-column-app.git
+git clone https://github.com/bonie562/split-by-column-app.git
 cd split-by-column-app
 pip install -r requirements.txt
 python data_splitter_app.py
