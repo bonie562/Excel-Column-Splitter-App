@@ -31,6 +31,10 @@ import traceback
 from pathlib import Path
 from typing import List, Dict, Optional, Tuple, Set
 import logging
+import urllib.request
+import shutil
+import subprocess
+import sys
 
 
 class DataSplitterApp:
@@ -39,7 +43,7 @@ class DataSplitterApp:
     def __init__(self, root: tk.Tk):
         """Initialize the application with main window and UI components."""
         self.root = root
-        self.root.title("Split by Column - Data Splitter (Enhanced MVP v2.0)")
+        self.root.title("Split by Column - Data Splitter")
         self.root.geometry("1200x950")
         self.root.resizable(True, True)
 
@@ -49,30 +53,28 @@ class DataSplitterApp:
         )
         self._setup_file_logging()
 
-        # Define default font
-        # Define default fonts with fallback if 'Outfit' is unavailable on the system
-        try:
-            import tkinter.font as tkfont
-            families = set(tkfont.families())
-            preferred = "Outfit" if "Outfit" in families else tkfont.nametofont("TkDefaultFont").actual().get("family", "Segoe UI")
-        except Exception:
-            # If font queries fail (headless or strange env), use sensible Windows defaults
-            preferred = "Segoe UI"
+        # Define default fonts via a runtime helper that attempts to ensure
+        # the 'Outfit' family is available across platforms. If Outfit
+        # cannot be installed/registered, the helper returns a sensible
+        # fallback family name.
+        preferred = self._ensure_outfit_font()
 
         self.default_font = (preferred, 10)
         self.small_font = (preferred, 8)
         self.button_font = (preferred, 9)
         self.title_font = (preferred, 11, "bold")
 
-        # Monospace font for preview/logs; prefer Courier New, then Consolas, else fallback to default
+        # Monospace font for preview/logs; prefer Courier New, then Consolas, else fallback to preferred
         try:
+            import tkinter.font as tkfont
+            families = set(tkfont.families())
             mono_family = "Courier New" if "Courier New" in families else ("Consolas" if "Consolas" in families else preferred)
         except Exception:
             mono_family = "Courier New"
 
         self.mono_font = (mono_family, 9)
         # Slightly larger listbox font to increase perceived line height
-        self.listbox_font = (preferred, 11)
+        self.listbox_font = (preferred, 9)
 
         # Application state
         self.input_file_path: Optional[str] = None
@@ -93,6 +95,15 @@ class DataSplitterApp:
 
         # Setup UI
         self._setup_ui()
+        # Try to apply rounded corners to the window perimeter where supported
+        try:
+            # Delay first application until window has mapped and sized
+            self.root.after(200, lambda: self._apply_rounded_corners(16))
+            # Re-apply on resize/configure so the region matches the new size
+            self.root.bind("<Configure>", lambda e: self._apply_rounded_corners(16))
+        except Exception:
+            pass
+
         self.log("Application started successfully.")
 
     def _setup_ui(self) -> None:
@@ -159,7 +170,7 @@ class DataSplitterApp:
         info_label = tk.Label(
             column_frame, 
             text="Hold Ctrl+Click to select multiple\nOr use Shift+Click for ranges",
-            fg="blue", font=("Outfit", 8)
+            fg="blue", font=self.small_font
         )
         info_label.grid(row=0, column=0, sticky=tk.W, pady=(0, 5), padx=(10, 0))
 
@@ -169,7 +180,7 @@ class DataSplitterApp:
 
         self.column_listbox = tk.Listbox(
             column_frame,
-            selectmode=tk.MULTIPLE,
+            selectmode=tk.EXTENDED,
             yscrollcommand=scrollbar.set,
             height=12,
             width=30,
@@ -217,9 +228,11 @@ class DataSplitterApp:
         )
         self.preview_info_label.grid(row=0, column=0, sticky=tk.W, pady=(0, 5), padx=(10, 0))
 
+        # (font status label was removed per user request)
+
         # Preview data display
         preview_scroll = ttk.Scrollbar(preview_frame)
-        preview_scroll.grid(row=1, column=1, sticky=(tk.N, tk.S), padx=(0, 10))
+        # preview_scroll.grid(row=1, column=1, sticky=(tk.N, tk.S), padx=(0, 10))
 
         self.preview_text = scrolledtext.ScrolledText(
             preview_frame,
@@ -261,7 +274,7 @@ class DataSplitterApp:
         )
         self.progress_bar.grid(row=0, column=0, sticky=(tk.W, tk.E), pady=(0, 5))
 
-        self.progress_label = tk.Label(progress_frame, text="Ready", fg="blue", font=("Outfit", 9))
+        self.progress_label = tk.Label(progress_frame, text="Ready", fg="blue", font=self.default_font)
         self.progress_label.grid(row=1, column=0, sticky=tk.W)
 
         # Action Buttons
@@ -300,6 +313,8 @@ class DataSplitterApp:
         # Configure line spacing for log display as well
         try:
             self.log_text.tag_configure("line_spacing", spacing1=3, spacing3=3)
+            # Default tag for unstyled log lines
+            self.log_text.tag_configure("default", foreground="white")
             self.log_text.tag_configure("error", foreground="red")
             self.log_text.tag_configure("warning", foreground="yellow")
             self.log_text.tag_configure("success", foreground="lightgreen")
@@ -324,6 +339,213 @@ class DataSplitterApp:
             )
         except Exception as e:
             print(f"Warning: Could not setup file logging: {e}")
+
+    def _ensure_outfit_font(self) -> str:
+        """
+        Ensure the 'Outfit' font family is available at runtime.
+
+        Strategy:
+        - If 'Outfit' already present in the system's font families, return it.
+        - Otherwise, attempt to download Outfit-Regular.ttf from the
+          Google Fonts repository and register it for the current session.
+          Registration is platform-specific:
+            - Windows: use AddFontResourceExW (private) via ctypes.
+            - macOS: copy into ~/Library/Fonts.
+            - Linux: copy into ~/.local/share/fonts and run fc-cache.
+        - If registration succeeds and the family becomes visible to Tk, return 'Outfit'.
+        - On any failure, return the system default family as a safe fallback.
+
+        Note: Download/registration is best-effort and behaves gracefully when
+        offline or when the current user lacks permission to install fonts.
+        """
+        try:
+            import tkinter.font as tkfont
+            families = set(tkfont.families())
+            if "Outfit" in families:
+                # Already installed system-wide
+                try:
+                    self._font_loaded_source = "system"
+                except Exception:
+                    pass
+                return "Outfit"
+        except Exception:
+            families = set()
+
+        # Prefer a bundled font inside the project: ./fonts/Outfit-Regular.ttf
+        try:
+            script_dir = Path(__file__).parent
+        except Exception:
+            script_dir = Path(os.path.expanduser("~"))
+
+        bundled_font_path = script_dir / "fonts" / "Outfit-Regular.ttf"
+
+        local_path = None
+        if bundled_font_path.exists():
+            local_path = str(bundled_font_path)
+            try:
+                self._font_loaded_source = "bundled"
+            except Exception:
+                pass
+        else:
+            # Prepare local fonts directory inside the user's Desktop as fallback
+            fonts_dir = os.path.join(os.path.expanduser("~"), "Desktop", "seperatebycolumn", "fonts")
+            try:
+                os.makedirs(fonts_dir, exist_ok=True)
+            except Exception:
+                fonts_dir = os.path.join(os.path.expanduser("~"), ".local_separatebycolumn_fonts")
+                os.makedirs(fonts_dir, exist_ok=True)
+
+            ttf_url = "https://raw.githubusercontent.com/google/fonts/main/ofl/outfit/Outfit-Regular.ttf"
+            local_path = os.path.join(fonts_dir, "Outfit-Regular.ttf")
+
+            try:
+                # Download if not present
+                if not os.path.exists(local_path):
+                    try:
+                        urllib.request.urlretrieve(ttf_url, local_path)
+                        try:
+                            self._font_loaded_source = "downloaded"
+                        except Exception:
+                            pass
+                    except Exception:
+                        # If download fails, give up gracefully
+                        local_path = None
+
+            except Exception:
+                local_path = None
+
+        if local_path and os.path.exists(local_path):
+                # Platform specific registration
+                if sys.platform.startswith("win"):
+                    try:
+                        from ctypes import windll
+                        FR_PRIVATE = 0x10
+                        # Registers font for this session
+                        windll.gdi32.AddFontResourceExW(local_path, FR_PRIVATE, 0)
+                        # Broadcast WM_FONTCHANGE so applications notice the new font
+                        HWND_BROADCAST = 0xFFFF
+                        WM_FONTCHANGE = 0x001D
+                        windll.user32.SendMessageW(HWND_BROADCAST, WM_FONTCHANGE, 0, 0)
+                    except Exception:
+                        pass
+
+                elif sys.platform == "darwin":
+                    # macOS: attempt to register font for the current process using CoreText
+                    try:
+                        from ctypes import cdll, c_void_p, c_int, c_bool, c_char_p
+                        coretext = cdll.LoadLibrary('/System/Library/Frameworks/CoreText.framework/CoreText')
+                        cf = cdll.LoadLibrary('/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation')
+                        CFURLCreateFromFileSystemRepresentation = cf.CFURLCreateFromFileSystemRepresentation
+                        CFURLCreateFromFileSystemRepresentation.restype = c_void_p
+                        CFURLCreateFromFileSystemRepresentation.argtypes = [c_void_p, c_char_p, c_int, c_bool]
+                        url = CFURLCreateFromFileSystemRepresentation(None, local_path.encode('utf-8'), len(local_path), True)
+                        CTFontManagerRegisterFontsForURL = coretext.CTFontManagerRegisterFontsForURL
+                        CTFontManagerRegisterFontsForURL.argtypes = [c_void_p, c_int, c_void_p]
+                        CTFontManagerRegisterFontsForURL.restype = c_bool
+                        kCTFontManagerScopeProcess = 1
+                        try:
+                            CTFontManagerRegisterFontsForURL(url, kCTFontManagerScopeProcess, None)
+                        except Exception:
+                            pass
+                    except Exception:
+                        # If CoreText registration is unavailable, do not copy or install
+                        pass
+
+                else:
+                    # Linux-ish: attempt to add font to the application's fontconfig
+                    try:
+                        from ctypes import cdll, c_char_p
+                        # Try common lib names
+                        for libname in ("libfontconfig.so.1", "libfontconfig.so"):
+                            try:
+                                libfc = cdll.LoadLibrary(libname)
+                                break
+                            except Exception:
+                                libfc = None
+                        if libfc is not None:
+                            try:
+                                FcInitLoadConfigAndFonts = libfc.FcInitLoadConfigAndFonts
+                                FcInitLoadConfigAndFonts.restype = c_void_p
+                                config = FcInitLoadConfigAndFonts()
+                                FcConfigAppFontAddFile = libfc.FcConfigAppFontAddFile
+                                FcConfigAppFontAddFile.argtypes = [c_void_p, c_char_p]
+                                FcConfigAppFontAddFile.config = None
+                                FcConfigAppFontAddFile(config, local_path.encode('utf-8'))
+                            except Exception:
+                                pass
+                    except Exception:
+                        pass
+
+                # After registration attempt, refresh families and check
+                try:
+                    import tkinter.font as tkfont2
+                    families = set(tkfont2.families())
+                    if "Outfit" in families:
+                        return "Outfit"
+                except Exception:
+                    pass
+
+        # Final fallback: system default family or sensible Windows default
+        try:
+            try:
+                self._font_loaded_source = "system"
+            except Exception:
+                pass
+            import tkinter.font as tkfont
+            return tkfont.nametofont("TkDefaultFont").actual().get("family", "Segoe UI")
+        except Exception:
+            try:
+                self._font_loaded_source = "fallback"
+            except Exception:
+                pass
+            return "Segoe UI"
+
+        def _apply_rounded_corners(self, radius: int = 16) -> None:
+            """
+            Apply rounded corners to the main window perimeter where supported.
+
+            Currently implemented as a best-effort for Windows using the
+            Win32 GDI CreateRoundRectRgn + SetWindowRgn APIs. For other
+            platforms this is a no-op.
+
+            Notes:
+            - We schedule an initial call after the window maps and also
+              re-apply on '<Configure>' so the region tracks size changes.
+            - If the platform or APIs are unavailable the function silently
+              returns without affecting the window.
+
+            Args:
+                radius: corner radius in pixels
+            """
+            try:
+                import sys
+                if not sys.platform.startswith("win"):
+                    return
+
+                # Acquire required Win32 functions
+                from ctypes import windll, byref, wintypes
+
+                hwnd = self.root.winfo_id()
+                # Ensure the window has a valid size before creating region
+                w = self.root.winfo_width()
+                h = self.root.winfo_height()
+                if w <= 1 or h <= 1:
+                    return
+
+                # CreateRoundRectRgn parameters: left, top, right, bottom, widthEllipse, heightEllipse
+                gdi32 = windll.gdi32
+                user32 = windll.user32
+                CreateRoundRectRgn = gdi32.CreateRoundRectRgn
+                SetWindowRgn = user32.SetWindowRgn
+
+                # right and bottom in CreateRoundRectRgn are exclusive coordinates
+                hrgn = CreateRoundRectRgn(0, 0, int(w) + 1, int(h) + 1, radius, radius)
+                # Apply region to window (True = redraw)
+                SetWindowRgn(wintypes.HWND(hwnd), hrgn, True)
+
+            except Exception:
+                # Best-effort: silently ignore failures so app remains usable
+                return
 
     def log(self, message: str, level: str = "INFO") -> None:
         """
@@ -699,15 +921,37 @@ class DataSplitterApp:
             # Get unique combinations
             self._update_progress(10, "Computing unique groups...")
 
+            # Create a safe copy of the dataframe for grouping to avoid Pandas
+            # errors when columns are categorical and contain null-like values.
+            # We only sanitize the selected columns on the copy so original data
+            # remains unchanged for other operations.
+            safe_df = self.dataframe.copy()
+            for col in selected_columns:
+                try:
+                    # Convert to string and normalize common null representations to 'Unknown'
+                    safe_df[col] = (
+                        safe_df[col]
+                        .astype(str)
+                        .replace(["nan", "None", "<NA>", "NoneType", "NA", "NaN", ""], "Unknown")
+                        .fillna("Unknown")
+                    )
+                except Exception:
+                    # Fallback: ensure no nulls, then cast to string
+                    try:
+                        safe_df[col] = safe_df[col].fillna("Unknown").astype(str)
+                    except Exception:
+                        # If all else fails, create a column of 'Unknown'
+                        safe_df[col] = "Unknown"
+
             if len(selected_columns) == 1:
-                # Single column: split by unique values
-                split_groups = self.dataframe.groupby(selected_columns[0], dropna=False)
+                # Single column: split by unique values (use sanitized copy)
+                split_groups = safe_df.groupby(selected_columns[0], dropna=False)
                 total_groups = len(split_groups)
                 self.log(f"Single column split: {total_groups} unique values found", "INFO")
 
             elif len(selected_columns) == len(self.all_columns):
-                # All columns: each unique row combination
-                split_groups = self.dataframe.groupby(selected_columns, dropna=False)
+                # All columns: each unique row combination (use sanitized copy)
+                split_groups = safe_df.groupby(selected_columns, dropna=False)
                 total_groups = len(split_groups)
                 self.log(
                     f"All columns split: {total_groups} unique row combinations found",
@@ -715,21 +959,51 @@ class DataSplitterApp:
                 )
 
             else:
-                # Multiple columns: split by unique combinations
-                split_groups = self.dataframe.groupby(selected_columns, dropna=False)
+                # Multiple columns: split by unique combinations (use sanitized copy)
+                split_groups = safe_df.groupby(selected_columns, dropna=False)
                 total_groups = len(split_groups)
                 self.log(
                     f"Multi-column split: {total_groups} unique combinations found",
                     "INFO",
                 )
 
+            # Guard against zero groups to avoid division by zero
+            if total_groups == 0:
+                self.log("No groups found to export.", "WARNING")
+                self._update_progress(100, "No groups to export")
+                self.is_processing = False
+                self.root.after(0, lambda: self.start_button.config(state=tk.NORMAL))
+                return
+
             self._update_progress(15, f"Exporting {total_groups} groups...")
 
             # Create output directory for split files
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            split_output_dir = os.path.join(
-                self.output_folder_path, f"split_{timestamp}"
-            )
+            # Prefer a descriptive folder name based on selected column(s)
+            try:
+                if len(selected_columns) == 1:
+                    base_folder = self._sanitize_string(selected_columns[0])
+                elif len(selected_columns) == len(self.all_columns):
+                    base_folder = "all_columns"
+                else:
+                    parts = [self._sanitize_string(c) for c in selected_columns]
+                    base_folder = "__".join(parts)
+            except Exception:
+                base_folder = "split_output"
+
+            # Keep folder name reasonably short
+            if len(base_folder) > 80:
+                base_folder = base_folder[:80]
+
+            split_output_dir = os.path.join(self.output_folder_path, base_folder)
+
+            # If folder exists, append a counter to avoid collisions
+            if os.path.exists(split_output_dir):
+                counter = 1
+                orig = split_output_dir
+                while os.path.exists(split_output_dir):
+                    split_output_dir = f"{orig}_{counter}"
+                    counter += 1
+
             os.makedirs(split_output_dir, exist_ok=True)
             self.log(f"Created output directory: {split_output_dir}", "INFO")
 
@@ -763,6 +1037,12 @@ class DataSplitterApp:
                         group_data.to_excel(file_path, index=False, engine="openpyxl")
 
                     exported_files.append(file_path)
+                    # Track exported group info for future features
+                    try:
+                        # store without extension
+                        self.split_groups_info[filename] = len(group_data)
+                    except Exception:
+                        pass
                     self.log(
                         f"✓ Exported: {full_filename} ({len(group_data)} rows)",
                         "INFO",
@@ -785,9 +1065,24 @@ class DataSplitterApp:
 
             self._update_progress(82, "Creating ZIP archive...")
 
-            # Create ZIP archive
-            zip_filename = f"output_split_{timestamp}.zip"
+            # Create ZIP archive named after the output folder (sanitized)
+            try:
+                zip_base = os.path.basename(split_output_dir)
+                zip_base_safe = self._sanitize_string(zip_base)
+            except Exception:
+                zip_base_safe = "output_split"
+
+            zip_filename = f"{zip_base_safe}.zip"
             zip_path = os.path.join(self.output_folder_path, zip_filename)
+
+            # Ensure unique zip filename
+            if os.path.exists(zip_path):
+                zcnt = 1
+                orig_zip = zip_path
+                while os.path.exists(zip_path):
+                    name, ext = os.path.splitext(orig_zip)
+                    zip_path = f"{name}_{zcnt}{ext}"
+                    zcnt += 1
 
             with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zipf:
                 for file_path in exported_files:
@@ -796,7 +1091,7 @@ class DataSplitterApp:
 
             zip_size_mb = os.path.getsize(zip_path) / 1024 / 1024
 
-            self.log(f"✓ ZIP archive created: {zip_filename} ({zip_size_mb:.2f} MB)", "SUCCESS")
+            self.log(f"✓ ZIP archive created: {os.path.basename(zip_path)} ({zip_size_mb:.2f} MB)", "SUCCESS")
             self.log(
                 f"✓ Total files exported: {len(exported_files)}",
                 "SUCCESS",

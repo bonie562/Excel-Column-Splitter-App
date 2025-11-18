@@ -151,3 +151,790 @@ to
 [2025-11-18 12:21:47] [INFO] Column listbox populated with 16 columns
 [2025-11-18 14:19:54] [INFO] Application started successfully.
 [2025-11-18 14:20:17] [INFO] Application started successfully.
+[2025-11-18 15:11:26] [INFO] Application started successfully.
+[2025-11-18 15:19:00] [INFO] Application started successfully.
+[2025-11-18 15:20:38] [INFO] Application started successfully.
+[2025-11-18 15:50:55] [INFO] Application started successfully.
+[2025-11-18 15:51:07] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 15:51:07] [INFO] File loaded as Excel format
+[2025-11-18 15:51:07] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 15:51:07] [INFO] Total rows: 200
+[2025-11-18 15:51:07] [INFO] Column listbox populated with 16 columns
+[2025-11-18 15:51:20] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 15:51:35] [INFO] Split operation starting...
+[2025-11-18 15:51:35] [INFO] Selected columns: CM
+[2025-11-18 15:51:35] [INFO] Output format: csv
+[2025-11-18 15:51:35] [INFO] Starting split with columns: CM
+[2025-11-18 15:51:35] [ERROR] Split operation failed: Categorical categories cannot be null
+[2025-11-18 15:51:35] [ERROR] Traceback (most recent call last):
+  File "split_by_column.py", line 705, in _perform_split
+  File "pandas\core\groupby\groupby.py", line 789, in __len__
+  File "pandas\core\groupby\groupby.py", line 853, in groups
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "pandas\core\groupby\ops.py", line 726, in groups
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "pandas\core\groupby\grouper.py", line 842, in groups
+  File "pandas\core\arrays\categorical.py", line 746, in from_codes
+  File "pandas\core\dtypes\dtypes.py", line 338, in _from_values_or_dtype
+  File "pandas\core\dtypes\dtypes.py", line 221, in __init__
+  File "pandas\core\dtypes\dtypes.py", line 378, in _finalize
+  File "pandas\core\dtypes\dtypes.py", line 576, in validate_categories
+ValueError: Categorical categories cannot be null
+
+[2025-11-18 15:53:19] [INFO] Application started successfully.
+[2025-11-18 15:53:29] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 15:53:31] [INFO] File loaded as Excel format
+[2025-11-18 15:53:31] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 15:53:31] [INFO] Total rows: 200
+[2025-11-18 15:53:31] [INFO] Column listbox populated with 16 columns
+[2025-11-18 15:53:34] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 15:53:41] [INFO] Split operation starting...
+[2025-11-18 15:53:41] [INFO] Selected columns: CM
+[2025-11-18 15:53:41] [INFO] Output format: excel
+[2025-11-18 15:53:41] [INFO] Starting split with columns: CM
+[2025-11-18 15:53:41] [ERROR] Split operation failed: Categorical categories cannot be null
+[2025-11-18 15:53:41] [ERROR] Traceback (most recent call last):
+  File "c:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\split_by_column.py", line 705, in _perform_split
+    total_groups = len(split_groups)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\groupby.py", line 789, in __len__
+    return len(self.groups)
+               ^^^^^^^^^^^
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\groupby.py", line 853, in groups
+    return self._grouper.groups
+           ^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\ops.py", line 726, in groups
+    return self.groupings[0].groups
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\grouper.py", line 842, in groups
+    cats = Categorical.from_codes(self.codes, self._group_index, validate=False)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\arrays\categorical.py", line 746, in from_codes
+    dtype = CategoricalDtype._from_values_or_dtype(
+        categories=categories, ordered=ordered, dtype=dtype
+    )
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 338, in _from_values_or_dtype
+    dtype = CategoricalDtype(categories, ordered)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 221, in __init__
+    self._finalize(categories, ordered, fastpath=False)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 378, in _finalize
+    categories = self.validate_categories(categories, fastpath=fastpath)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 576, in validate_categories
+    raise ValueError("Categorical categories cannot be null")
+ValueError: Categorical categories cannot be null
+
+[2025-11-18 15:54:31] [INFO] Application started successfully.
+[2025-11-18 15:54:51] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 15:54:52] [INFO] File loaded as Excel format
+[2025-11-18 15:54:52] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 15:54:52] [INFO] Total rows: 200
+[2025-11-18 15:54:52] [INFO] Column listbox populated with 16 columns
+[2025-11-18 15:54:56] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 15:55:23] [INFO] Split operation starting...
+[2025-11-18 15:55:23] [INFO] Selected columns: CM
+[2025-11-18 15:55:23] [INFO] Output format: excel
+[2025-11-18 15:55:23] [INFO] Starting split with columns: CM
+[2025-11-18 15:55:23] [ERROR] Split operation failed: Categorical categories cannot be null
+[2025-11-18 15:55:23] [ERROR] Traceback (most recent call last):
+  File "c:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\split_by_column.py", line 713, in _perform_split
+    total_groups = len(split_groups)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\groupby.py", line 789, in __len__
+    return len(self.groups)
+               ^^^^^^^^^^^
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\groupby.py", line 853, in groups
+    return self._grouper.groups
+           ^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\ops.py", line 726, in groups
+    return self.groupings[0].groups
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\grouper.py", line 842, in groups
+    cats = Categorical.from_codes(self.codes, self._group_index, validate=False)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\arrays\categorical.py", line 746, in from_codes
+    dtype = CategoricalDtype._from_values_or_dtype(
+        categories=categories, ordered=ordered, dtype=dtype
+    )
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 338, in _from_values_or_dtype
+    dtype = CategoricalDtype(categories, ordered)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 221, in __init__
+    self._finalize(categories, ordered, fastpath=False)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 378, in _finalize
+    categories = self.validate_categories(categories, fastpath=fastpath)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 576, in validate_categories
+    raise ValueError("Categorical categories cannot be null")
+ValueError: Categorical categories cannot be null
+
+[2025-11-18 15:56:26] [INFO] Application started successfully.
+[2025-11-18 15:56:32] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 15:56:32] [INFO] File loaded as Excel format
+[2025-11-18 15:56:32] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 15:56:32] [INFO] Total rows: 200
+[2025-11-18 15:56:32] [INFO] Column listbox populated with 16 columns
+[2025-11-18 15:56:35] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 15:56:38] [INFO] Application reset to initial state.
+[2025-11-18 15:56:43] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 15:56:43] [INFO] File loaded as Excel format
+[2025-11-18 15:56:43] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 15:56:43] [INFO] Total rows: 200
+[2025-11-18 15:56:43] [INFO] Column listbox populated with 16 columns
+[2025-11-18 15:56:46] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 15:56:51] [INFO] Split operation starting...
+[2025-11-18 15:56:51] [INFO] Selected columns: CM
+[2025-11-18 15:56:51] [INFO] Output format: excel
+[2025-11-18 15:56:51] [INFO] Starting split with columns: CM
+[2025-11-18 15:56:51] [ERROR] Split operation failed: Categorical categories cannot be null
+[2025-11-18 15:56:51] [ERROR] Traceback (most recent call last):
+  File "c:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\split_by_column.py", line 719, in _perform_split
+    total_groups = len(split_groups)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\groupby.py", line 789, in __len__
+    return len(self.groups)
+               ^^^^^^^^^^^
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\groupby.py", line 853, in groups
+    return self._grouper.groups
+           ^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\ops.py", line 726, in groups
+    return self.groupings[0].groups
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\grouper.py", line 842, in groups
+    cats = Categorical.from_codes(self.codes, self._group_index, validate=False)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\arrays\categorical.py", line 746, in from_codes
+    dtype = CategoricalDtype._from_values_or_dtype(
+        categories=categories, ordered=ordered, dtype=dtype
+    )
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 338, in _from_values_or_dtype
+    dtype = CategoricalDtype(categories, ordered)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 221, in __init__
+    self._finalize(categories, ordered, fastpath=False)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 378, in _finalize
+    categories = self.validate_categories(categories, fastpath=fastpath)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 576, in validate_categories
+    raise ValueError("Categorical categories cannot be null")
+ValueError: Categorical categories cannot be null
+
+[2025-11-18 16:10:03] [INFO] Application started successfully.
+[2025-11-18 16:10:16] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 16:10:17] [INFO] File loaded as Excel format
+[2025-11-18 16:10:17] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 16:10:17] [INFO] Total rows: 200
+[2025-11-18 16:10:17] [INFO] Column listbox populated with 16 columns
+[2025-11-18 16:10:20] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 16:10:24] [INFO] Split operation starting...
+[2025-11-18 16:10:24] [INFO] Selected columns: CM
+[2025-11-18 16:10:24] [INFO] Output format: excel
+[2025-11-18 16:10:24] [INFO] Starting split with columns: CM
+[2025-11-18 16:10:24] [ERROR] Split operation failed: Categorical categories cannot be null
+[2025-11-18 16:10:24] [ERROR] Traceback (most recent call last):
+  File "c:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\split_by_column.py", line 736, in _perform_split
+    total_groups = len(split_groups)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\groupby.py", line 789, in __len__
+    return len(self.groups)
+               ^^^^^^^^^^^
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\groupby.py", line 853, in groups
+    return self._grouper.groups
+           ^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\ops.py", line 726, in groups
+    return self.groupings[0].groups
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\grouper.py", line 842, in groups
+    cats = Categorical.from_codes(self.codes, self._group_index, validate=False)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\arrays\categorical.py", line 746, in from_codes
+    dtype = CategoricalDtype._from_values_or_dtype(
+        categories=categories, ordered=ordered, dtype=dtype
+    )
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 338, in _from_values_or_dtype
+    dtype = CategoricalDtype(categories, ordered)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 221, in __init__
+    self._finalize(categories, ordered, fastpath=False)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 378, in _finalize
+    categories = self.validate_categories(categories, fastpath=fastpath)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 576, in validate_categories
+    raise ValueError("Categorical categories cannot be null")
+ValueError: Categorical categories cannot be null
+
+[2025-11-18 16:11:26] [INFO] Application started successfully.
+[2025-11-18 16:11:35] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 16:11:35] [INFO] File loaded as Excel format
+[2025-11-18 16:11:35] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 16:11:35] [INFO] Total rows: 200
+[2025-11-18 16:11:35] [INFO] Column listbox populated with 16 columns
+[2025-11-18 16:11:44] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop
+[2025-11-18 16:11:50] [INFO] Split operation starting...
+[2025-11-18 16:11:50] [INFO] Selected columns: CM
+[2025-11-18 16:11:50] [INFO] Output format: csv
+[2025-11-18 16:11:50] [INFO] Starting split with columns: CM
+[2025-11-18 16:11:50] [ERROR] Split operation failed: Categorical categories cannot be null
+[2025-11-18 16:11:50] [ERROR] Traceback (most recent call last):
+  File "c:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\split_by_column.py", line 705, in _perform_split
+    total_groups = len(split_groups)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\groupby.py", line 789, in __len__
+    return len(self.groups)
+               ^^^^^^^^^^^
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\groupby.py", line 853, in groups
+    return self._grouper.groups
+           ^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\ops.py", line 726, in groups
+    return self.groupings[0].groups
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/properties.pyx", line 36, in pandas._libs.properties.CachedProperty.__get__
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\groupby\grouper.py", line 842, in groups
+    cats = Categorical.from_codes(self.codes, self._group_index, validate=False)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\arrays\categorical.py", line 746, in from_codes
+    dtype = CategoricalDtype._from_values_or_dtype(
+        categories=categories, ordered=ordered, dtype=dtype
+    )
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 338, in _from_values_or_dtype
+    dtype = CategoricalDtype(categories, ordered)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 221, in __init__
+    self._finalize(categories, ordered, fastpath=False)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 378, in _finalize
+    categories = self.validate_categories(categories, fastpath=fastpath)
+  File "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn\.venv\Lib\site-packages\pandas\core\dtypes\dtypes.py", line 576, in validate_categories
+    raise ValueError("Categorical categories cannot be null")
+ValueError: Categorical categories cannot be null
+
+[2025-11-18 16:18:08] [INFO] Application started successfully.
+[2025-11-18 16:19:32] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 16:19:33] [INFO] File loaded as Excel format
+[2025-11-18 16:19:33] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 16:19:33] [INFO] Total rows: 200
+[2025-11-18 16:19:33] [INFO] Column listbox populated with 16 columns
+[2025-11-18 16:20:14] [INFO] Application started successfully.
+[2025-11-18 16:20:18] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 16:20:18] [INFO] File loaded as Excel format
+[2025-11-18 16:20:18] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 16:20:18] [INFO] Total rows: 200
+[2025-11-18 16:20:18] [INFO] Column listbox populated with 16 columns
+[2025-11-18 16:20:21] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 16:20:25] [INFO] Split operation starting...
+[2025-11-18 16:20:25] [INFO] Selected columns: CM
+[2025-11-18 16:20:25] [INFO] Output format: excel
+[2025-11-18 16:20:25] [INFO] Starting split with columns: CM
+[2025-11-18 16:20:25] [INFO] Single column split: 17 unique values found
+[2025-11-18 16:20:25] [INFO] Created output directory: C:/Users/Abdussamad Ahmad/Desktop/Wasper app\split_20251118_162025
+[2025-11-18 16:20:26] [INFO] \u2713 Exported: A.xlsx (4 rows)
+[2025-11-18 16:20:26] [INFO] \u2713 Exported: A.xlsx (18 rows)
+[2025-11-18 16:20:26] [INFO] \u2713 Exported: D.xlsx (12 rows)
+[2025-11-18 16:20:26] [INFO] \u2713 Exported: F.xlsx (6 rows)
+[2025-11-18 16:20:26] [INFO] \u2713 Exported: F.xlsx (26 rows)
+[2025-11-18 16:20:26] [INFO] \u2713 Exported: H.xlsx (4 rows)
+[2025-11-18 16:20:26] [INFO] \u2713 Exported: M.xlsx (7 rows)
+[2025-11-18 16:20:26] [INFO] \u2713 Exported: M.xlsx (3 rows)
+[2025-11-18 16:20:26] [INFO] \u2713 Exported: O.xlsx (8 rows)
+[2025-11-18 16:20:26] [INFO] \u2713 Exported: O.xlsx (20 rows)
+[2025-11-18 16:20:27] [INFO] \u2713 Exported: R.xlsx (8 rows)
+[2025-11-18 16:20:27] [INFO] \u2713 Exported: T.xlsx (7 rows)
+[2025-11-18 16:20:27] [INFO] \u2713 Exported: T.xlsx (7 rows)
+[2025-11-18 16:20:27] [INFO] \u2713 Exported: T.xlsx (7 rows)
+[2025-11-18 16:20:27] [INFO] \u2713 Exported: U.xlsx (13 rows)
+[2025-11-18 16:20:27] [INFO] \u2713 Exported: U.xlsx (3 rows)
+[2025-11-18 16:20:27] [INFO] \u2713 Exported: U.xlsx (47 rows)
+[2025-11-18 16:20:27] [INFO] \u2713 ZIP archive created: output_split_20251118_162025.zip (0.10 MB)
+[2025-11-18 16:20:27] [INFO] \u2713 Total files exported: 17
+[2025-11-18 16:20:27] [INFO] ================================================================================
+[2025-11-18 16:20:27] [INFO] SPLIT OPERATION COMPLETED SUCCESSFULLY!
+[2025-11-18 16:20:27] [INFO] ================================================================================
+[2025-11-18 16:23:07] [INFO] Application started successfully.
+[2025-11-18 16:23:16] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 16:23:17] [INFO] File loaded as Excel format
+[2025-11-18 16:23:17] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 16:23:17] [INFO] Total rows: 200
+[2025-11-18 16:23:17] [INFO] Column listbox populated with 16 columns
+[2025-11-18 16:23:47] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 16:23:50] [INFO] Split operation starting...
+[2025-11-18 16:23:50] [INFO] Selected columns: CM
+[2025-11-18 16:23:50] [INFO] Output format: excel
+[2025-11-18 16:23:50] [INFO] Starting split with columns: CM
+[2025-11-18 16:23:50] [INFO] Single column split: 17 unique values found
+[2025-11-18 16:23:50] [INFO] Created output directory: C:/Users/Abdussamad Ahmad/Desktop/Wasper app\split_20251118_162350
+[2025-11-18 16:23:50] [INFO] \u2713 Exported: A.xlsx (4 rows)
+[2025-11-18 16:23:50] [INFO] \u2713 Exported: A.xlsx (18 rows)
+[2025-11-18 16:23:50] [INFO] \u2713 Exported: D.xlsx (12 rows)
+[2025-11-18 16:23:50] [INFO] \u2713 Exported: F.xlsx (6 rows)
+[2025-11-18 16:23:50] [INFO] \u2713 Exported: F.xlsx (26 rows)
+[2025-11-18 16:23:50] [INFO] \u2713 Exported: H.xlsx (4 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 Exported: M.xlsx (7 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 Exported: M.xlsx (3 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 Exported: O.xlsx (8 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 Exported: O.xlsx (20 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 Exported: R.xlsx (8 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 Exported: T.xlsx (7 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 Exported: T.xlsx (7 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 Exported: T.xlsx (7 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 Exported: U.xlsx (13 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 Exported: U.xlsx (3 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 Exported: U.xlsx (47 rows)
+[2025-11-18 16:23:51] [INFO] \u2713 ZIP archive created: output_split_20251118_162350.zip (0.10 MB)
+[2025-11-18 16:23:51] [INFO] \u2713 Total files exported: 17
+[2025-11-18 16:23:51] [INFO] ================================================================================
+[2025-11-18 16:23:51] [INFO] SPLIT OPERATION COMPLETED SUCCESSFULLY!
+[2025-11-18 16:23:51] [INFO] ================================================================================
+[2025-11-18 16:28:38] [INFO] Application started successfully.
+[2025-11-18 16:28:44] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 16:28:45] [INFO] File loaded as Excel format
+[2025-11-18 16:28:45] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 16:28:45] [INFO] Total rows: 200
+[2025-11-18 16:28:45] [INFO] Column listbox populated with 16 columns
+[2025-11-18 16:37:44] [INFO] Application started successfully.
+[2025-11-18 16:37:53] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 16:37:53] [INFO] File loaded as Excel format
+[2025-11-18 16:37:53] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 16:37:53] [INFO] Total rows: 200
+[2025-11-18 16:37:53] [INFO] Column listbox populated with 16 columns
+[2025-11-18 16:40:13] [INFO] Application started successfully.
+[2025-11-18 16:40:55] [INFO] Application started successfully.
+[2025-11-18 16:44:28] [INFO] Application started successfully.
+[2025-11-18 16:44:36] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 16:44:36] [INFO] File loaded as Excel format
+[2025-11-18 16:44:36] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 16:44:36] [INFO] Total rows: 200
+[2025-11-18 16:44:36] [INFO] Column listbox populated with 16 columns
+[2025-11-18 16:44:38] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 16:48:50] [INFO] Application started successfully.
+[2025-11-18 16:49:00] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 16:49:00] [INFO] File loaded as Excel format
+[2025-11-18 16:49:00] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 16:49:00] [INFO] Total rows: 200
+[2025-11-18 16:49:00] [INFO] Column listbox populated with 16 columns
+[2025-11-18 16:49:03] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 16:49:09] [INFO] Split operation starting...
+[2025-11-18 16:49:09] [INFO] Selected columns: CM
+[2025-11-18 16:49:09] [INFO] Output format: excel
+[2025-11-18 16:49:09] [INFO] Starting split with columns: CM
+[2025-11-18 16:49:09] [INFO] Single column split: 17 unique values found
+[2025-11-18 16:49:09] [INFO] Created output directory: C:/Users/Abdussamad Ahmad/Desktop/Wasper app\CM
+[2025-11-18 16:49:09] [INFO] \u2713 Exported: A.xlsx (4 rows)
+[2025-11-18 16:49:10] [INFO] \u2713 Exported: A.xlsx (18 rows)
+[2025-11-18 16:49:10] [INFO] \u2713 Exported: D.xlsx (12 rows)
+[2025-11-18 16:49:10] [INFO] \u2713 Exported: F.xlsx (6 rows)
+[2025-11-18 16:49:10] [INFO] \u2713 Exported: F.xlsx (26 rows)
+[2025-11-18 16:49:10] [INFO] \u2713 Exported: H.xlsx (4 rows)
+[2025-11-18 16:49:10] [INFO] \u2713 Exported: M.xlsx (7 rows)
+[2025-11-18 16:49:10] [INFO] \u2713 Exported: M.xlsx (3 rows)
+[2025-11-18 16:49:10] [INFO] \u2713 Exported: O.xlsx (8 rows)
+[2025-11-18 16:49:10] [INFO] \u2713 Exported: O.xlsx (20 rows)
+[2025-11-18 16:49:10] [INFO] \u2713 Exported: R.xlsx (8 rows)
+[2025-11-18 16:49:10] [INFO] \u2713 Exported: T.xlsx (7 rows)
+[2025-11-18 16:49:11] [INFO] \u2713 Exported: T.xlsx (7 rows)
+[2025-11-18 16:49:11] [INFO] \u2713 Exported: T.xlsx (7 rows)
+[2025-11-18 16:49:11] [INFO] \u2713 Exported: U.xlsx (13 rows)
+[2025-11-18 16:49:11] [INFO] \u2713 Exported: U.xlsx (3 rows)
+[2025-11-18 16:49:11] [INFO] \u2713 Exported: U.xlsx (47 rows)
+[2025-11-18 16:49:11] [INFO] \u2713 ZIP archive created: CM.zip (0.10 MB)
+[2025-11-18 16:49:11] [INFO] \u2713 Total files exported: 17
+[2025-11-18 16:49:11] [INFO] ================================================================================
+[2025-11-18 16:49:11] [INFO] SPLIT OPERATION COMPLETED SUCCESSFULLY!
+[2025-11-18 16:49:11] [INFO] ================================================================================
+[2025-11-18 16:56:03] [INFO] Application started successfully.
+[2025-11-18 16:56:10] [INFO] User selected file: C:/Users/Abdussamad Ahmad/Desktop/Wasper Class.xlsx
+[2025-11-18 16:56:11] [INFO] File loaded as Excel format
+[2025-11-18 16:56:11] [INFO] Columns detected: S/N, Business Name, BRM, CM, Normal Volume (7 Days), Minimum Volume (7 Days)
+[60% of , Tue, 04-Nov-2025 
+to
+ Mon, 10-, Mon, 03-Nov-2025 
+to
+ Sun, 09-, Sun, 02-Nov-2025 
+to
+ Sat, 08-, Sat, 01-Nov-2025 
+to
+ Fri, 07-, Fri, 31-Oct-2025 
+to
+ Thu, 06-, Thu, 30-Oct-2025 
+to
+ Wed, 05-, Wed, 29-Oct-2025 
+to
+ Tue, 04-, Tue, 28-Oct-2025 
+to
+ Mon, 03-, Mon, 27-Oct-2025 
+to
+ Sun, 02-, Transcation
+[2025-11-18 16:56:11] [INFO] Total rows: 200
+[2025-11-18 16:56:11] [INFO] Column listbox populated with 16 columns
+[2025-11-18 16:56:18] [INFO] Output folder selected: C:/Users/Abdussamad Ahmad/Desktop/Wasper app
+[2025-11-18 16:56:23] [INFO] Split operation starting...
+[2025-11-18 16:56:23] [INFO] Selected columns: BRM
+[2025-11-18 16:56:23] [INFO] Output format: csv
+[2025-11-18 16:56:23] [INFO] Starting split with columns: BRM
+[2025-11-18 16:56:23] [INFO] Single column split: 99 unique values found
+[2025-11-18 16:56:23] [INFO] Created output directory: C:/Users/Abdussamad Ahmad/Desktop/Wasper app\BRM
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: _.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (2 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (5 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (2 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (4 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (2 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (2 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (2 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (2 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (2 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (2 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (3 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (2 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (2 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: A.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: B.csv (5 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: B.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: B.csv (2 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: B.csv (3 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: C.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: D.csv (4 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: D.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: D.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: D.csv (1 rows)
+[2025-11-18 16:56:24] [INFO] \u2713 Exported: E.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: E.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: E.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: F.csv (19 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: F.csv (3 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: F.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: G.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: G.csv (3 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: H.csv (5 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: H.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: H.csv (3 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: I.csv (3 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: I.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: I.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: I.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: I.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: J.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: J.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: J.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: K.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: M.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: M.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: M.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: M.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: M.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: M.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: M.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: M.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: N.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: N.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (3 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (5 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (5 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (3 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (5 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (1 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (2 rows)
+[2025-11-18 16:56:25] [INFO] \u2713 Exported: O.csv (1 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: O.csv (1 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: O.csv (1 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: S.csv (1 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: S.csv (3 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: S.csv (2 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: T.csv (3 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: T.csv (1 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: U.csv (1 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: U.csv (2 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: U.csv (2 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: U.csv (3 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: W.csv (2 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: a.csv (1 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: a.csv (2 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: h.csv (2 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: j.csv (1 rows)
+[2025-11-18 16:56:26] [INFO] \u2713 Exported: s.csv (1 rows)
+[2025-11-18 16:56:27] [INFO] \u2713 ZIP archive created: BRM.zip (0.04 MB)
+[2025-11-18 16:56:27] [INFO] \u2713 Total files exported: 99
+[2025-11-18 16:56:27] [INFO] ================================================================================
+[2025-11-18 16:56:27] [INFO] SPLIT OPERATION COMPLETED SUCCESSFULLY!
+[2025-11-18 16:56:27] [INFO] ================================================================================
+[2025-11-18 17:11:54] [INFO] Application started successfully.

@@ -1,0 +1,23 @@
+How to Install and Run Split by Column
+1. Download the Application
+Download the latest version of SplitByColumn.exe from the official release page or the link provided by the author.
+Save the file to a folder on your computer (for example, your Desktop or Downloads folder).
+2. Run the Application
+Double-click SplitByColumn.exe to start the app.
+If you see a Windows Defender SmartScreen warning, click “More info” and then “Run anyway.” (This is normal for new apps that are not yet widely distributed.)
+No installation is required — the app runs directly.
+3. Using the App
+Click “📁 Load Excel/CSV” to select your data file.
+Choose your output folder.
+Select one or more columns to split by (hold Ctrl or Shift for multi-select).
+Click “▶ START SPLIT” to process your file.
+When finished, a ZIP file containing all split files will be created in your chosen output folder.
+Check the “Activity Log” panel for details and any errors.
+4. System Requirements
+Windows 10 or later (64-bit recommended)
+No need to install Python or any extra software
+The app is self-contained
+5. Troubleshooting
+If you see errors about missing DLLs or the app does not start, ensure your system is up to date with Windows Updates.
+If you have antivirus software, it may warn about new EXE files. You can safely allow the app if downloaded from the official source.
+For help, contact the author or check the included README for more details.

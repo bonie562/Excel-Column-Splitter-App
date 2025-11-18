@@ -1,0 +1,28 @@
+Locate the App
+
+If you installed using an installer, look for a shortcut named “Split by Column” on your Desktop or in your Start Menu.
+If you downloaded a ZIP or EXE, find SplitByColumn.exe in your chosen folder.
+First Launch
+
+Double-click the app icon to start.
+The main window will open, ready for use.
+Basic Workflow
+
+Click “📁 Load Excel/CSV” to select your data file.
+Click “📂 Choose Folder” to pick where output files will be saved.
+Select one or more columns in the list to split your data by.
+Click “▶ START SPLIT” to begin processing.
+Watch the progress bar and log for updates.
+When finished, find your split files and a ZIP archive in the output folder you chose.
+Tips
+
+Use Ctrl+Click or Shift+Click to select multiple columns.
+The “Activity Log” panel shows details and any errors.
+You can reset the app at any time with the “Reset” button.
+Uninstalling
+
+If you used an installer, uninstall via “Add or Remove Programs” in Windows.
+If you used a standalone EXE, simply delete the EXE file and any output folders you created.
+Support
+
+For help, check the README, or contact the author using the information provided.
