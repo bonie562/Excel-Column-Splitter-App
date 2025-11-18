@@ -1,0 +1,207 @@
+🚀 QUICK START GUIDE - Split by Column v2.0
+=============================================
+
+📋 WHAT THIS APP DOES:
+• Loads Excel or CSV files
+• Lets you select columns to split by
+• Shows a LIVE PREVIEW of what will be created (before any files are made!)
+• Splits your data into separate files
+• Creates a ZIP with all files
+
+⚡ REQUIREMENTS:
+✓ Python 3.8+
+✓ 2 Python packages: pandas, openpyxl
+✓ Write access to an output folder
+
+═══════════════════════════════════════════════════════════════════════
+
+🔧 INSTALLATION (One-time setup, 1 minute):
+
+1. Open PowerShell or Command Prompt
+
+2. Navigate to this folder:
+   cd "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn"
+
+3. Install required packages:
+   pip install -r requirements.txt
+
+✓ Done! You're ready to go.
+
+═══════════════════════════════════════════════════════════════════════
+
+▶ HOW TO RUN:
+
+Option A (Easiest):
+   python split_by_column.py
+
+Option B (Command line):
+   cd "C:\Users\Abdussamad Ahmad\Desktop\seperatebycolumn"
+   python split_by_column.py
+
+Option C (Create Windows Shortcut):
+   1. Right-click split_by_column.py
+   2. Send to → Desktop (create shortcut)
+   3. Double-click the shortcut to run
+
+═══════════════════════════════════════════════════════════════════════
+
+📖 BASIC WORKFLOW (8 Simple Steps):
+
+STEP 1: Load File
+   → Click "📁 Load Excel/CSV" button
+   → Choose your data file
+   → App detects all columns
+
+STEP 2: Select Columns (from the list on left)
+   → Single column: Click once
+   → Multiple: Ctrl+Click or Shift+Click
+   → All: Click ">>> SELECT ALL COLUMNS <<<"
+   
+STEP 3: Watch the Preview!
+   → Right side shows LIVE PREVIEW
+   → See sample rows
+   → See how many files will be created
+   → See example filenames BEFORE running
+
+STEP 4: Choose Format
+   → CSV (default, smaller files)
+   → Excel (XLSX, fancier)
+
+STEP 5: Choose Output Folder
+   → Click "📂 Choose Folder"
+   → Select where to save
+
+STEP 6: Click START
+   → Button lights up when ready
+   → Progress bar fills as it works
+
+STEP 7: Wait & Watch
+   → Progress bar = 0% → 100%
+   → Log shows each file being created
+   → ZIP is automatically created
+
+STEP 8: Get Your Files
+   → Success message shows folder
+   → Files are in split_YYYYMMDD_HHMMSS folder
+   → ZIP file ready to download
+
+═══════════════════════════════════════════════════════════════════════
+
+📝 WHAT FILE NAMING MEANS:
+
+ONE column selected → One file per unique value
+   Selected: "Department"
+   Files: IT.csv, HR.csv, Sales.csv
+
+MULTIPLE columns → One file per combination
+   Selected: "Department" + "Country"
+   Files: Department_IT__Country_USA.csv
+          Department_IT__Country_Nigeria.csv
+          Department_HR__Country_USA.csv
+
+ALL columns → Safe numbered files
+   Files: Group_001.csv, Group_002.csv, etc.
+
+═══════════════════════════════════════════════════════════════════════
+
+💡 EXAMPLE USAGE:
+
+Scenario: Split a customer list by Region
+
+1. Load: "customers.csv" (1000 rows)
+2. Select: "Region" column
+3. Preview shows: 4 unique regions = 4 files will be created
+4. Choose: CSV format
+5. Choose: Output folder
+6. Click: START
+   → north_america.csv (250 rows)
+   → europe.csv (300 rows)
+   → asia.csv (350 rows)
+   → africa.csv (100 rows)
+   → output_split_20250115_143250.zip (all files packed)
+
+═══════════════════════════════════════════════════════════════════════
+
+❓ COMMON QUESTIONS:
+
+Q: What if I select wrong columns?
+A: Click Reset button, start over. Nothing is saved until you click START.
+
+Q: Can I see what will happen before clicking START?
+A: YES! The PREVIEW section shows sample data, group count, and filenames.
+
+Q: Will it overwrite my original file?
+A: NO. Original file is never touched. New files go to output folder.
+
+Q: What if filenames have special characters?
+A: App sanitizes them automatically (/ \ : * ? " | become _)
+
+Q: How long does it take?
+A: Depends on file size:
+   • Small (< 10 MB): < 5 seconds
+   • Medium (10-100 MB): 5-30 seconds
+   • Large (> 100 MB): up to 2 minutes
+
+Q: Can I close it while running?
+A: Not recommended. Wait for progress bar to reach 100%.
+
+═══════════════════════════════════════════════════════════════════════
+
+🐛 TROUBLESHOOTING:
+
+Problem: "No module named pandas"
+Fix: Run this command:
+   pip install -r requirements.txt
+
+Problem: "File not found"
+Fix: Make sure file exists and isn't in use
+   Try: Close the file, try again
+
+Problem: "Permission denied"
+Fix: Choose different output folder or run as Administrator
+
+Problem: Preview not showing
+Fix: Make sure at least one column is selected
+   Try: Click a different column, then your desired one
+
+═══════════════════════════════════════════════════════════════════════
+
+📋 FILES IN THIS FOLDER:
+
+split_by_column.py     ← Main application (run this!)
+requirements.txt       ← List of packages to install
+README.md             ← Full detailed documentation
+README_v2.md          ← Enhanced documentation (all features)
+app.log               ← Created on first run (logs everything)
+QUICK_START.txt       ← This file!
+
+═══════════════════════════════════════════════════════════════════════
+
+✅ CHECKLIST BEFORE FIRST RUN:
+
+□ Python 3.8+ installed (check: python --version)
+□ Packages installed (check: pip list | grep pandas)
+□ Data file ready (CSV or Excel)
+□ Output folder accessible
+□ 100+ MB free disk space
+□ No antivirus blocking write operations
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 YOU'RE READY!
+
+Open PowerShell:
+   python split_by_column.py
+
+Or just double-click the shortcut on your Desktop.
+
+Enjoy! 🚀
+
+═══════════════════════════════════════════════════════════════════════
+
+Questions? Check:
+1. Activity Log in the app (real-time messages)
+2. app.log file (permanent record)
+3. README_v2.md (detailed feature guide)
+
+Happy splitting! 📊
